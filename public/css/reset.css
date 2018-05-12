@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+img {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* commen Style */
+
+/* fixed水平垂直居中样式 */
+
+.center {
+    /* position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+}
+
+/* 浮动公共样式 */
+
+.lf {
+    float: left;
+}
+
+.rt {
+    float: right;
+}
+
+/* 按钮公共样式 */
+
+.btn {
+    padding: 5px 10px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    outline: 0;
+    background-color: #8DCCD1;
+    color: #fff;
+    transition: box-shadow .5s;
+}
+
+.btn:hover {
+    box-shadow: 0 0 10px #fff;
+}
+
+.btn:active {
+    animation: btn_click .1s;
+}
+
+@keyframes btn_click {
+    0% {
+        background-color: #8DCCD1;
+    }
+    50% {
+        background-color: #e6f3ff;
+    }
+    100% {
+        background-color: #8DCCD1;
+    }
+}
+
+/* 容器公共样式 */
+
+.container {
+    overflow: hidden;
+    width: 100%;
+}
+
+/* 选项卡公共样式 */
+
+.tabs {
+    height: 50px;
+    background-color: #8DCCD1;
+}
+
+.tabs>li {
+    position: relative;
+    float: left;
+    min-width: 28px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 10px;
+    text-align: center;
+    color: #fff;
+    transition: background-color .5s, box-shadow .5s;
+}
+
+.tabs li:hover {
+    background-color: #A1E6EB;
+    box-shadow: 0 0 1px #fff;
+}
+
+.tabs>li.active {
+    background-color: #f5f5f5;
+    color: #A1E6EB;
+}
+
+.tabs>li>a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.tabs>li>ul {
+    z-index: 2;
+    width: 100%;
+    display: none;
+    position: absolute;
+    left: 0;
+    border-top: 1px solid rgb(224, 240, 253);
+    background-color: #8DCCD1;
+}
+
+/* 下拉框样式 */
+
+.dropdown>ul>li {
+    height: 30px;
+    line-height: 30px;
+}
+
+.dropdown>ul>li:hover {
+    background-color: rgb(212, 223, 233);
+}
+
+.dropdown:hover ul {
+    display: block;
+    box-shadow: 0 0 10px #fff;
+}
+
+/* 清楚浮动 */
+
+.clearFix {
+    zoom: 1;
+    clear: both;
+}
+
+.clearFix:before {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+}
+
+.clearFix:after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+}
+
+/* 表格公共样式 */
+
+.table-hover {
+    width: 100%;
+    border: 1px solid hsl(210, 15%, 69%);
+    ;
+    border-collapse: collapse;
+}
+
+.table-hover tr, .table-hover td, .table-hover th {
+    text-align: center;
+    border: 1px solid hsl(210, 15%, 69%);
+}
+
+.table-hover td, .table-hover th {
+    height: 30px;
+}
+
+.table-hover>thead>tr {
+    /* background-color: #2891e7; */
+}
+
+.table-hover>tbody>tr {
+    background-color: #f5f5f5;
+}
+
+.table-hover>tbody>tr:hover {
+    background-color: #e6f3ff;
+}
+
+/* 分页样式 */
+
+.pagination {
+    clear: both;
+    overflow: hidden;
+    padding: 6px;
+}
+
+.pagination a {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 2px 6px;
+    color: #8DCCD1;
+}
+
+.pagination>ul {
+    margin: 0 80px;
+    text-align: center;
+}
+
+.pagination>p>a, .pagination>ul>li {
+    display: inline-block;
+    border: 1px solid #8DCCD1;
+    border-radius: 3px;
+    background-color: #f5f5f5;
+}
+
+.pagination>p>a:hover, .pagination>ul>li:hover {
+    background-color: #e6f3ff;
+}
+
+.pagination>ul>.active {
+    background-color: bisque;
+}
+
+.pagination>p>a {
+    width: 70px;
+    text-align: center;
+}
+
+.pagination>.info {
+    clear: both;
+    height: 24px;
+    line-height: 24px;
+    padding: 6px;
+    text-align: right;
+}
+
+.pagination>.info>select {
+    box-sizing: border-box;
+    height: 24px;
+    /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+    border: 1px solid #8DCCD1;
+    /*很关键：将默认的select选择框样式清除*/
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    /*在选择框的最右侧中间显示小箭头图片*/
+    background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding: 3px 14px 3px 3px;
+    border-radius: 3px;
+}
+
+.pagination>.info>select::-ms-expand {
+    display: none;
+}
+
+.pagination>.info>select:focus {
+    outline: none;
+}
+
+/* modal */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 0 6px #666;
+    background-color: aliceblue;
+}

@@ -1,0 +1,168 @@
+/* 动画 */
+
+@keyframes rotateIn {
+    from {
+        transform: rotateY(0) scale(0);
+    }
+    to {
+        transform: rotateY(720deg) scale(1);
+    }
+}
+
+body {
+    background-color: #F5F5F5;
+}
+
+/*登录框样式*/
+
+.bg {
+    width: 100%;
+    height: 300px;
+    background-image: url("../images/13.jpg");
+    background-size: 100% 100%;
+    background-size: contain;
+    /* background-size: cover; */
+}
+
+.signBox {
+    width: 200px;
+    padding: 8px;
+    margin-top: 20px;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    background-color: #8DCCD1;
+    color: #000;
+}
+
+.signBox .tip {
+    margin-top: 16px;
+    text-align: right;
+}
+
+.signBox h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.signBox label {
+    display: inline-block;
+    width: 18%;
+}
+
+.signBox input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 30px;
+    padding-left: 10px;
+    outline: 0;
+    border: 1px dashed #8DCCD1;
+    background-color: #fff;
+}
+
+.signBox label {
+    margin-bottom: 3px;
+}
+
+.signBox input[type="submit"] {
+    width: 100%;
+    padding: 0;
+    border-radius: 3px;
+    color: #fff;
+    background-color: rgb(190, 229, 255);
+}
+
+.signBox input[type="submit"]:active {
+    border: 0;
+    opacity: .5;
+}
+
+.signBox p {
+    visibility: hidden;
+    height: 20px;
+    line-height: 20px;
+    color: red;
+}
+
+.signBox .tip {
+    visibility: visible;
+    height: 20px;
+    line-height: 20px;
+    color: red;
+}
+
+.signup {
+    display: none;
+}
+
+/* 用户信息 */
+
+.userInfo {
+    float: right;
+    width: 200px;
+    padding: 0 10px 10px 10px;
+    margin-top: 20px;
+    background-color: #8DCCD1;
+}
+
+.userInfo p {
+    margin: 10px;
+}
+
+/* 内容模块 */
+
+.content {
+    overflow: hidden;
+    margin-right: 224px;
+    padding: 10px 0;
+}
+
+.content_item {
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 10px 20px;
+    border: 1px solid #8DCCD1;
+    transition: box-shadow .5s;
+}
+
+.content_item:hover {
+    box-shadow: 0 0 10px #000;
+}
+
+.content_item>h3 {
+    padding: 6px 0;
+    border-bottom: 1px solid #8DCCD1;
+}
+ 
+.content_item>p {
+    padding: 16px;
+    background-color: #8DCCD1;
+}
+
+.content_item>h3, .content_item>p, .content_item>ul  {
+    margin-bottom: 16px;
+}
+
+.content_item>ul>li {
+    float: left;
+    margin-right: 16px;
+}
+
+/* 导航栏 博客类别 */
+
+.tabs {
+    margin: 6px 0;
+}
+
+@keyframes fade {
+    form {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.tabs a {
+    color: #fff;
+}

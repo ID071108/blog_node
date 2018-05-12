@@ -1,0 +1,55 @@
+{% extends "layout.html" %} {% block main %}
+<div class="content_index">
+    <h3>内容列表</h3>
+    <table class="table-hover">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>type</th>
+                <th>title</th>
+                <th>user</th>
+                <th>addTime</th>
+                <th>views</th>
+                <th>descript</th>
+                <th>content</th>
+                <th>operate</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for content in contents %}
+            <tr>
+                <td>{{ content._id.toString() }}</td>
+                <td>{{ content.type._id.toString() }}</td>
+                <td>{{ content.title }}</td>
+                <td>{{ content.user.username }}</td>
+                <td>{{ content.addTime|date("Y-m-d H:i:s", -8*60) }}</td>
+                <td>{{ content.views }}</td>
+                <td>{{ content.descript }}</td>
+                <td>
+                    <p style="width: 200px;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;">
+                        {{ content.content }}
+                    </p>
+                </td>
+                <td>
+                    <button class="btn btn_modify">
+                        <a href="/admin/content/edit?id={{ content._id.toString() }}">修改</a>
+                    </button>
+                    <button class="btn btn_delete">
+                        <a href="javascript: void(0)" data-id="{{ content._id.toString() }}">删除</a>
+                    </button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% include "../components/pagination.html" %}
+    <div class="modal">
+        <input type="text" class="currVal" disabled />
+        <input type="text" class="newVal" placeholder="请输入新的类别名称" />
+        <p class="msg" style="margin-bottom: 10px;"></p>
+        <button class="btn test">保存</button>
+    </div>
+</div>
+{% endblock %} {% block username %}
+<span>{{userInfo.username}}</span>
+{% endblock %}

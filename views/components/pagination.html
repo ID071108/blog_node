@@ -1,0 +1,39 @@
+<div class="pagination">
+    <p class="lf">
+        {% if (page - 1) >= 1 %}
+        <a href="{{window.location.pathname}}?page={{page - 1}}&pageSize={{pageSize}}">上一页</a>
+        {% else %}
+        <a href="javascript:;">上一页</a>
+        {% endif %}
+    </p>
+    <p class="rt">
+        {% if (page + 1) > pages %}
+        <a href="javascript:;">下一页</a>
+        {% else %}
+        <a href="{{window.location.pathname}}?page={{page + 1}}&pageSize={{pageSize}}">下一页</a>
+        {% endif %}
+    </p>
+    <ul>
+        </li>
+        {% for key, val in pagesArr %}
+        <li class="{{(page == key + 1) && 'active' }}">
+            <a href="{{window.location.pathname}}?page={{key + 1}}&pageSize={{pageSize}}">{{key + 1}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <p class="info">
+        <span>
+            一共有&nbsp;{{ count }}&nbsp;条数据&nbsp;每页显示
+        </span>
+
+        <select id="" onchange="">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+        </select>
+
+        <span>
+            条&nbsp;共{{pages}}页
+        </span>
+    </p>
+</div>

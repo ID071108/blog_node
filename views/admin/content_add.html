@@ -1,0 +1,49 @@
+{% extends "layout.html" %} {% block main %}
+<div class="content_add">
+    <ul class="tabs" style="background-color: #f5f5f5;">
+        <li>
+            <a href="javascript: window.location.pathname = 'admin/content'">返回内容列表</a>
+        </li>
+    </ul>
+    <h3 class="">添加分类</h3>
+    <form action="javascript: void(0)" method="POST">
+        <p>
+            <label for="content_add_type">请选择分类类别:</label>
+            <select name="type" id="content_add_type">
+                {% for category in categories %}
+                <option value="{{ category._id.toString() }}">
+                    {{ category.type }}
+                </option>
+                {% endfor %}
+            </select>
+        </p>
+        <p>
+            <label for="content_add_title">
+                <span style="color: red">*</span>请输入标题:</label>
+            <input name="title" id="content_add_title" type="text" placeholder="請輸入标题" />
+            <span style="display: none; color: red"></span>
+        </p>
+
+        <p>
+            <label for="content_add_descript">请输入简介:</label>
+            <textarea name="descript" id="content_add_descript" rows="3" cols="" placeholder="請輸入内容简介"></textarea>
+        </p>
+        <p>
+            <label for="content_add_content">请输入内容:</label>
+            <textarea name="content" id="content_add_content" rows="10" cols="" placeholder="請輸入内容"></textarea>
+        </p>
+        <input type="submit" value="提交" />
+    </form>
+    <div class="modal">
+        <h3>内容保存成功</h3>
+        <button class="btn">
+            <a href="/admin/content">返回内容列表</a>
+        </button>
+        <button class="btn">
+            <a href="/admin/content/add">继续添加</a>
+        </button>
+    </div>
+</div>
+{% endblock %} {% block username %}
+<span>{{userInfo.username}}</span>
+{% endblock %}

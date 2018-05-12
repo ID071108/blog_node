@@ -1,0 +1,35 @@
+{% extends "layout.html" %} {% block main %}
+<div class="category_index">
+    <h3>分类列表</h3>
+    <table class="table-hover">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>type</th>
+                <th>operate</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for type in types %}
+            <tr>
+                <td>{{ type._id.toString() }}</td>
+                <td>{{ type.type }}</td>
+                <td>
+                    <button class="btn btn_modify">修改</button>
+                    <button class="btn btn_delete">删除</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% include "../components/pagination.html" %}
+    <div class="modal">
+        <input type="text" class="currVal" disabled />
+        <input type="text" class="newVal" placeholder="请输入新的类别名称" />
+        <p class="msg" style="margin-bottom: 10px;"></p>
+        <button class="btn test">保存</button>
+    </div>
+</div>
+{% endblock %} {% block username %}
+<span>{{userInfo.username}}</span>
+{% endblock %}

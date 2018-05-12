@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, 
+                                     initial-scale=1.0, 
+                                     maximum-scale=1.0, 
+                                     user-scalable=no">
+    <title>blog</title>
+    <link rel="stylesheet" href="/public/css/reset.css">
+    <!--[if lt IE 9]>
+       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="/public/css/media.css">
+    <link rel="stylesheet" href="/public/css/main.css">
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="bg">
+            <!-- <img src="public/images/16.png" alt=""> -->
+        </div>
+        <ul class="tabs">
+            {% for category in categories %}
+            <li>
+                <a href="">
+                    {{category.type}}
+                </a>
+            </li>
+            {% endfor %}
+            <li>
+                <a href="">查看全部类别</a>
+            </li>
+        </ul>
+        {% if (!userInfo._id) %}
+        <div class="signBox center rt">
+            <div class="signin">
+                <h3>登录</h3>
+                <form>
+                    <label for="username">帐号</label>
+                    <input type="text" id="username" name="username" />
+                    <p></p>
+                    <label for="password">密码</label>
+                    <input type="password" id="password" name="password" />
+                    <p class="validate_msg"></p>
+                    <input type="submit" value="登录" />
+                </form>
+                <p class="tip">
+                    <span>没有帐号？点击</span>
+                    <a class="signup_link" href="javascript:;">马上注册</a>
+                </p>
+            </div>
+            <div class="signup">
+                <h3>注册</h3>
+                <form>
+                    <label for="username">帐号</label>
+                    <input type="text" id="username" name="username" />
+                    <p></p>
+                    <label for="password">密码</label>
+                    <input type="password" id="password" name="password" />
+                    <p></p>
+                    <label for="password_confirm">确认</label>
+                    <input type="password" id="password_confirm" name="password_confirm" />
+                    <p class="validate_msg"></p>
+                    <input type="submit" value="注册" />
+                </form>
+                <p class="tip">
+                    <span>已有帐号？点击</span>
+                    <a href="javascript:;" class="signin_link">马上登录</a>
+                </p>
+            </div>
+        </div>
+        {% else %}
+        <div class="userInfo">
+            <p>Welcome to my blog </p>
+            {% if userInfo.isAdmin %}
+            <p>管理员大人，您好！</p>
+            <a href="/admin" class="btn">进入管理</a>
+            {% else %}
+            <p>{{userInfo.username}}</p>
+            {% endif %}
+            <button class="signout btn">退出</button>
+        </div>
+        {% endif %}
+        <div class="content">
+            {% for content in contents %}
+            <div class="content_item">
+                <h3>
+                    <a href="">{{ content.title }}</a>
+                </h3>
+                <ul class="clearFix">
+                    <li>作者:{{ content.user.username }}</li>
+                    <li>类别:{{ content.type.type }}</li>
+                    <li>添加时间:{{ content.addTime|date("Y-m-d H:i:s", -8*60) }}</li>
+                    <li>阅读量:{{ content.views }}</li>
+                </ul>
+                <p>
+                    <span>简介:</span>
+                    <span style="word-wrap: break-word;">{{ content.descript }}</span>
+                </p>
+                <div style="overflow: hidden;">
+
+                    <button class="btn" style="float: right">阅读全文</button>
+                </div>
+            </div>
+            {% endfor %} {% include "../components/pagination.html" %}
+        </div>
+    </div>
+    <script src="/public/js/jquery-3.3.1.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <!-- <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <script src="/public/js/main/index.js"></script>
+</body>
+
+</html>

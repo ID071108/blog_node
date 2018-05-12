@@ -1,4 +1,5 @@
-= blog
+# blog
+======
 >这是一个博客, 基于jquery, node, express, swig, mongoDB, mongoose等.
 
 ## 项目结构

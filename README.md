@@ -44,5 +44,13 @@
 
 ## 当前效果图
 homePage: 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "homepage")
-#项目尚不完整！！！
+![alt text](https://github.com/ID071108/blog_node/blob/master/public/imgs4md/homepage.jpg "homepage")
+admin_homepage: 
+![alt text](https://github.com/ID071108/blog_node/blob/master/public/imgs4md/admin_hp.jpg "admin_homepage")
+users: 
+![alt text](https://github.com/ID071108/blog_node/blob/master/public/imgs4md/user.jpg "users")
+category: 
+![alt text](https://github.com/ID071108/blog_node/blob/master/public/imgs4md/catogory.jpg "category")
+content: 
+![alt text](https://github.com/ID071108/blog_node/blob/master/public/imgs4md/content.jpg "content")
+# 项目尚不完整！！！

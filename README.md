@@ -1,4 +1,4 @@
-= blog
+## blog
 >这是一个博客, 基于jquery, node, express, swig, mongoDB, mongoose等.
 
 ## 项目结构
@@ -35,8 +35,8 @@
 ## 启动项目
 1. 启动服务器
 > cd 到mongod所在的bin目录
->> $ cd D:\MongoDB\Server\3.6\bin
->> $ .\mongod --dbpath=E:\git\blog\db --port=27018
+> $ cd D:\MongoDB\Server\3.6\bin
+> $ .\mongod --dbpath=E:\git\blog\db --port=27018
 2. 连接服务器
 > 可以通过robomongo这个工具软件来建立连接
 3. 启动项目
